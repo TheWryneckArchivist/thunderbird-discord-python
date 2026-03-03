@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thunderbird-discord-python"
+version = "0.1.0"
+description = "Thunderbird Discord bot and async workers"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "discord.py>=2.4.0",
+  "grpcio>=1.68.1",
+  "grpcio-tools>=1.68.1",
+  "aio-pika>=9.5.4",
+  "pydantic>=2.10.3",
+  "python-dotenv>=1.0.1"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.4",
+  "pytest-asyncio>=0.24.0",
+  "ruff>=0.8.2",
+  "mypy>=1.13.0"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
